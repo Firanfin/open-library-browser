@@ -1,24 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import SearchBox from "./components/SearchBox";
+import styles from "./App.module.css";
+import { getBooks } from "./utility/functions";
 
 function App() {
+  const book = getBooks("the lord of the rings").then(console.log);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.container}>
+      <div className={styles.header}>Open Library Book Browser</div>
+      <div>
+        <SearchBox />
+      </div>
     </div>
   );
 }

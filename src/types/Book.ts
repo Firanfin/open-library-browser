@@ -1,4 +1,4 @@
-export interface Book {
+export type Book = {
   title: string;
   coverId: number;
 }

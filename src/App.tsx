@@ -1,17 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchBox from "./components/SearchBox";
 import styles from "./App.module.css";
 import { getBooks } from "./utility/functions";
+import { Book } from "./types/Book";
+import Results from "./components/Results";
+import Header from "./components/Header";
 
 function App() {
-  const book = getBooks("the lord of the rings").then(console.log);
+  const [books, setBooks] = useState<Book[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+
+  function loadBooks() {
+    setLoading(true);
+    setBooks([]);
+
+    getBooks("lord").then((res) => {
+      setBooks(res);
+      setLoading(false);
+    });
+  }
 
   return (
     <div className={styles.container}>
-      <div className={styles.header}>Open Library Book Browser</div>
-      <div>
-        <SearchBox />
-      </div>
+      <Header />
+
+      <SearchBox onClick={loadBooks} />
+
+      <Results books={books} loading={loading} />
     </div>
   );
 }

@@ -1,17 +1,19 @@
-import React from "react";
+import React, { FormEvent } from "react";
 import styles from "./SearchBox.module.css";
 
 interface SearchBoxProps {
-  onClick: () => void;
+  onSearch: () => void;
+  onTextChange: (value: string) => void;
+  error: string;
 }
 
-function SearchBox({ onClick }: SearchBoxProps) {
+function SearchBox({ onSearch, onTextChange, error }: SearchBoxProps) {
+
   return (
     <div className={styles.container}>
-      <input className={styles.input} type="text" />
-      <button className={styles.button} onClick={onClick}>
-        Search
-      </button>
+      <input type="text" className={styles.input} onChange={(e) => onTextChange(e.target.value)} />
+      <button className={styles.button} onClick={onSearch}>Search</button>
+      <div className={styles.error}>{error}</div>
     </div>
   );
 }

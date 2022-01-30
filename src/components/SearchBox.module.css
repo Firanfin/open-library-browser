@@ -1,9 +1,15 @@
 .container {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-rows: auto 20px;
+  grid-template-columns: auto auto;
+  grid-template-areas:
+    "input button"
+    "error .";
 }
 
 .input {
+  grid-area: input;
+
   width: 250px;
   padding: 5px 10px;
   border-radius: 5px;
@@ -11,9 +17,19 @@
 }
 
 .button {
+  grid-area: button;
+
   border: #144119 solid 1px;
   border-radius: 5px;
 
   padding: 5px;
   margin-left: 10px;
+}
+
+.error {
+  grid-area: error;
+
+  text-align: left;
+  font-size: 14px;
+  color: crimson;
 }

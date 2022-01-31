@@ -1,15 +1,34 @@
 .container {
   @apply shadow rounded-lg;
 
-  margin: 20px 0;
   padding: 10px;
 
   display: grid;
-  grid-template-columns: 100px 300px;
+  grid-template-columns: auto 300px;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+          "cover title"
+          "cover by"
+          "cover author";
+  grid-gap: 0 20px;
+  align-items: center;
+  justify-items: center;
+}
+
+.cover {
+  grid-area: cover;
+}
+
+.by {
+  grid-area: by;
 }
 
 .title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  grid-area: title;
+}
+
+.author {
+  grid-area: author;
+
+  font-size: 14px;
 }

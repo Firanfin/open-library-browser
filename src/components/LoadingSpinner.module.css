@@ -2,6 +2,9 @@
   height: 50px;
   width: 50px;
 
+  grid-column-start: 1;
+  grid-column-end: 3;
+
   animation: spin infinite 2s linear;
 }
 

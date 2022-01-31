@@ -28,6 +28,8 @@
 .results {
   @apply grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3;
 
+  margin-bottom: 50px;
+
   padding: 10px 20px;
 
   grid-gap: 20px;

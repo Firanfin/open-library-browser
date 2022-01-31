@@ -1,7 +1,7 @@
 .container {
+  @apply grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3;
+
   padding: 10px 20px;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  grid-gap: 20px;
 }

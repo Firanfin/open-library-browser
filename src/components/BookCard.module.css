@@ -17,6 +17,8 @@
 
 .cover {
   grid-area: cover;
+
+  cursor: pointer;
 }
 
 .by {

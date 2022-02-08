@@ -18,8 +18,14 @@ function BookCard({ book, openModal }: BookCardProps) {
         onClick={() => openModal(book.coverId)}
       />
       <div className={styles.title}>{book.title}</div>
-      <div className={styles.by}>{"by"}</div>
-      <div className={styles.author}>{book.author.join(", ")}</div>
+      {
+        book.authors
+        &&
+        <>
+            <div className={styles.by}>{"by"}</div>
+            <div className={styles.author}>{book.authors.join(", ")}</div>
+        </>
+      }
     </div>
   );
 }

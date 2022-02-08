@@ -1,5 +1,5 @@
 export type Book = {
   title: string;
-  author: string[];
+  authors: string[];
   coverId: number;
 }
